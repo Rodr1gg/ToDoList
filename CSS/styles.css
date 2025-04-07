@@ -1,0 +1,202 @@
+body {
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.sidebar {
+    width: 250px;
+    background: #1e1e1e;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    left: -250px; 
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1000; 
+}
+
+.sidebar.show {
+    left: 0;
+}
+
+
+.sidebar.show + .todo-container {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
+
+.todo-container {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    transition: margin-left 0.3s ease;
+}
+
+
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #212529;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.toggle-btn:hover {
+    transition: all 0.3s;
+    scale: 1.1;
+}
+
+
+.close-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+    width: 100%;
+}
+
+.list-group-item {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0 10px;
+}
+
+
+.list-group-item button {
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.list-group-item button:hover {
+    background: darkred;
+}
+
+
+.btn-secondary {
+    background-color: #343a40;
+    border: none;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #777;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: none;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 10px;
+    color: #4c4c4c;
+}
+
+.footer a {
+    color: #4c4c4c;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+.social-icons {
+    margin-top: 5px;
+}
+
+.social-icons a {
+    font-size: 12px;
+    margin: 0 8px;
+    color: #495057;
+}
+
+.social-icons a:hover {
+    color: #636363;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    
+    .sidebar {
+        width: 70%;
+        left: -70%;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .sidebar.show + .todo-container {
+        margin-left: 0; 
+    }
+
+    
+    .todo-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    
+    .toggle-btn {
+        left: 5px;
+        padding: 8px;
+    }
+
+    .list-group-item {
+        height: auto;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .footer {
+        padding: 5px;
+    }
+
+    .social-icons a {
+        font-size: 10px;
+    }
+}
